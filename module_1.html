@@ -8,7 +8,11 @@
 <body>
 <div class="container">
     <div class="step" id="questionnaire1">
-        <h2>Questionnaire 1</h2>
+        <h2>PCL-5</h2>
+        <p>Instructions: Below is a list of problems that people sometimes have in response to a very stressful experience. 
+            Please read each problem and then select one of the options to indicate how much you have been bothered by that problem in the past week. 
+            The options include not at all, a little bit, moderately, quite a bit, and extremely.
+        </p>
         <form>
             <table class="table table-bordered">
                 <thead>
@@ -28,7 +32,7 @@
     </div>
     
     <div class="step" id="questionnaire2">
-        <h2>Questionnaire 2</h2>
+        <h2>PLQ</h2>
         <form>
             <table class="table table-bordered">
                 <thead>
@@ -38,29 +42,23 @@
             </table>
         </form>
     </div>
-    
-    <div class="step" id="education">
-        <h2> Add your emergency contacts</h2>
-        <div class="contact-list" id="contact-list"></div>
-        
-        <div class="btn-container">
-            <button type="button" class="btn btn-secondary" onclick="showPhoneNumberForm()">Add more crisis/help phone number?</button>
-        </div>
-        <br>
 
-        <div class="form-group hidden" id="phone-number-form">
-          <label for="name">Name:</label> <br>
-          <input type="text" class="form-control2" id="name" placeholder="Enter name"><br>
-          <label for="phone-number">Phone Number:</label><br>
-          <input type="text" class="form-control2" id="phone-number" placeholder="Enter phone number"><br>
-          <button type="button" class="btn btn-secondary mt-2" onclick="addPhoneNumber()">Save Name and Phone Number</button>
-        </div>
+    <div class="step" id="education">
+        <h2>Pyscho Education</h2>
+        <p>Add all the context for Pyscho education here:</p>
     </div>
 
     <div class="step" id="textbox">
-        <h2>Text Box</h2>
         <div class="timer">30:00</div>
-        <p>You can start typing how you feel. You have 30 mins to complete this section.</p>
+        <p>Now take a moment and think about how you experience your pain on a day-to-day basis.
+            It might help to think of a recent moment, a critical life moment, or a moment when the pain was particularly high.
+             Think of pain signals like alarm bells that get set off.
+              What alarm bells get set off for you in these moments in the form of thoughts, feelings, sensations, etc. when you experience pain. 
+              Include in your description what comes to you in these moments, including images and/or thoughts of people, places, and things that become notable during the identified pain moment. 
+              It is important to include specifics of what happened during the specific pain moment you are describing and how you felt or what you were thinking when that event occurred. 
+              This is where details matter to fully understand your pain experience and its emotional impact. 
+              Think of what you saw, heard, smelled, and/or touched. Do not worry about your grammar or spelling, and do not worry if you run out of time, just write for the full 30 minutes.
+       </p>
         <textarea id="text-area" class="form-control" placeholder="Enter your text..."></textarea>
         <p class="typedText"></p>
     </div>

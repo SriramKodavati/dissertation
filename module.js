@@ -31,19 +31,11 @@ function init(moduleId) {
 
   // Call the generateQuestions() function when the page loads
   window.addEventListener('DOMContentLoaded', generateQuestions(moduleId));
-
-  initContacts();
-  showContacts();
 }
 
 function finish() {
 window.close();
 }
-
-// window.onload = function() {
-  // initContacts();
-  // showContacts();
-// };
 
 // global variables to keep track of the current step
 let currentStep = 0;
@@ -154,7 +146,7 @@ question1Heading.textContent = '1. What is your current level of pain';
 question1Heading.className = 'question-title';  // Add custom class to the title
 form.appendChild(question1Heading);
 const question1Text = document.createElement('h4');
-question1Text.textContent = 'on a scale of 0 (non-existent) to 10 (extreme)';
+question1Text.textContent = 'on a scale of 0 (non-existent) to 10 (extreme)?';
 question1Text.className = 'question-text';  // Add custom class to the text
 form.appendChild(question1Text);
 
@@ -177,11 +169,11 @@ for (let i = 0; i <= 10; i++) {
 
 // Create and append the second question
 const question2Heading = document.createElement('h2');
-question2Heading.textContent = '2. On average, what was your level of pain during the past 7 days?';
+question2Heading.textContent = '2. On average, what was your level of pain during the past 7 days';
 question2Heading.className = 'question-title';  // Add custom class to the title
 form.appendChild(question2Heading);
 const question2Text = document.createElement('h4');
-question2Text.textContent = 'on a scale of 0 (non-existent) to 10 (extreme)';
+question2Text.textContent = 'on a scale of 0 (non-existent) to 10 (extreme)?';
 question2Text.className = 'question-text';  // Add custom class to the text
 form.appendChild(question2Text);
 
@@ -220,7 +212,7 @@ question1Heading.textContent = '1. What is your current level of pain';
 question1Heading.className = 'question-title';  // Add custom class to the title
 form.appendChild(question1Heading);
 const question1Text = document.createElement('h4');
-question1Text.textContent = 'on a scale of 0 (non-existent) to 10 (extreme)';
+question1Text.textContent = 'on a scale of 0 (non-existent) to 10 (extreme)?';
 question1Text.className = 'question-text';  // Add custom class to the text
 form.appendChild(question1Text);
 
@@ -327,45 +319,4 @@ generateThirdQuestionnaire('questionnaire3');
 for (let i = 0; i < steps.length; i++) {
   loadFormData(moduleId, i);
 }
-}
-
-function initContacts() {
-  const defaultContacts = [
-    { name: "Emergency Services", phoneNumber: "911" },
-    { name: "National Suicide Prevention Lifeline", phoneNumber: "1-800-273-TALK (8255)" },
-    { name: "Crisis Text Line", phoneNumber: "Text HOME to 741741" },
-    { name: "National Domestic Violence Hotline", phoneNumber: "1-800-799-SAFE (7233)" }
-  ];
-  if (!localStorage.getItem("contacts")) {
-    localStorage.setItem("contacts", JSON.stringify(defaultContacts));
-  }
-}
-function addPhoneNumber() {
-  const name = document.getElementById("name").value;
-  const phoneNumber = document.getElementById("phone-number").value;
-  if (name && phoneNumber) {
-    let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
-    contacts.push({ name, phoneNumber });
-    localStorage.setItem("contacts", JSON.stringify(contacts));
-    document.getElementById("name").value = "";
-    document.getElementById("phone-number").value = "";
-    alert("Contact saved.");
-  } else {
-    alert("Please enter a name and phone number.");
-  }
-  showContacts();
-}
-function showContacts() {
-  let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
-  let contactsHtml = "<p><strong>List of current crisis/help phone numbers:</strong><br>";
-  contacts.forEach((contact) => {
-    contactsHtml += `<span style="display:inline-block;width:300px">${contact.name}:</span> ${contact.phoneNumber}<br>`;
-  });
-  contactsHtml += "</p>";
-  document.getElementById("contact-list").innerHTML = contactsHtml;
-}
-
-function showPhoneNumberForm() {
-  showContacts();
-  document.getElementById("phone-number-form").classList.remove("hidden");
 }
